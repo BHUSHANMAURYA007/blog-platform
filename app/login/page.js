@@ -7,19 +7,25 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = async () => {
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+  import { useRouter } from "next/navigation";
 
-    if (error) {
-      alert(error.message);
-    } else {
-      alert("Login successful ✅");
-    }
-  };
+const router = useRouter();
 
+const handleLogin = async () => {
+  const { error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+
+  if (error) {
+    alert(error.message);
+  } else {
+    alert("Login successful ✅");
+
+    // ✅ redirect after login
+    router.push("/dashboard");
+  }
+};
  return (
   <div style={container}>
     <h1>Login</h1>
