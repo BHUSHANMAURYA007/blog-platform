@@ -24,21 +24,30 @@ export default function Signup() {
   };
 
   return (
-  <div style={container}>
-    <h1>Signup</h1>
+    <div style={container}>
+      <h1>Signup</h1>
 
-    <input style={input} placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+      <input
+        style={input}
+        placeholder="Email"
+        onChange={(e) => setEmail(e.target.value)}
+      />
 
-    <input
-      style={input}
-      type="password"
-      placeholder="Password"
-      onChange={(e) => setPassword(e.target.value)}
-    />
+      <input
+        style={input}
+        type="password"
+        placeholder="Password"
+        onChange={(e) => setPassword(e.target.value)}
+      />
 
-    <button style={btn} onClick={handleSignup}>Signup</button>
-  </div>
-);
+      <button style={btn} onClick={handleSignup}>
+        Signup
+      </button>
+    </div>
+  );
+}
+
+// ✅ OUTSIDE component
 const container = {
   display: "flex",
   flexDirection: "column",
@@ -47,6 +56,7 @@ const container = {
   minHeight: "100vh",
   backgroundColor: "#f5f7fa"
 };
+
 const input = {
   padding: "10px",
   margin: "10px",
@@ -63,4 +73,3 @@ const btn = {
   border: "none",
   borderRadius: "5px"
 };
-}
