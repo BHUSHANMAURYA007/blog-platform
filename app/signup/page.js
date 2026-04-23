@@ -39,4 +39,28 @@ export default function Signup() {
     <button style={btn} onClick={handleSignup}>Signup</button>
   </div>
 );
+const container = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  minHeight: "100vh",
+  backgroundColor: "#f5f7fa"
+};
+const input = {
+  padding: "10px",
+  margin: "10px",
+  width: "250px",
+  borderRadius: "5px",
+  border: "1px solid #ccc"
+};
+
+const btn = {
+  padding: "10px 20px",
+  marginTop: "10px",
+  backgroundColor: "#007bff",
+  color: "white",
+  border: "none",
+  borderRadius: "5px"
+};
 }
