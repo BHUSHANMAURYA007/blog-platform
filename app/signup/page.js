@@ -24,21 +24,19 @@ export default function Signup() {
   };
 
   return (
-    <div>
-      <h1>Signup</h1>
+  <div style={container}>
+    <h1>Signup</h1>
 
-      <input
-        placeholder="Email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
+    <input style={input} placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
 
-      <input
-        type="password"
-        placeholder="Password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
+    <input
+      style={input}
+      type="password"
+      placeholder="Password"
+      onChange={(e) => setPassword(e.target.value)}
+    />
 
-      <button onClick={handleSignup}>Sign Up</button>
-    </div>
-  );
+    <button style={btn} onClick={handleSignup}>Signup</button>
+  </div>
+);
 }

@@ -19,15 +19,15 @@ export default function Posts() {
   };
 
   return (
-    <div>
-      <h1>All Posts</h1>
+  <div style={container}>
+    <h1>All Posts</h1>
 
-      {posts.map((post) => (
-        <div key={post.id}>
-          <h3>{post.title}</h3>
-          <p>{post.body}</p>
-        </div>
-      ))}
-    </div>
-  );
+    {posts.map((post) => (
+      <div key={post.id} style={card}>
+        <h3>{post.title}</h3>
+        <p>{post.body}</p>
+      </div>
+    ))}
+  </div>
+);
 }
