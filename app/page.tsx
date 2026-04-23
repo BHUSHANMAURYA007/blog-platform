@@ -25,7 +25,7 @@ const container = {
   height: "100vh",
   flexDirection: "column",
   backgroundColor: "#f0f4f8"
-};
+} as const;
 
 const btnStyle = {
   padding: "10px 20px",
