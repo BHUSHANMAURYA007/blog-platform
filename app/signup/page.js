@@ -1,5 +1,9 @@
 "use client";
 
 export default function Signup() {
-  return <h1>Signup Page Working ✅</h1>;
+  return (
+    <div>
+      <h1>Signup Page Working ✅</h1>
+    </div>
+  );
 }
