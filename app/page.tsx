@@ -1,27 +1,31 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <div style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height: "100vh",
-      flexDirection: "column",
-      backgroundColor: "#f0f4f8"
-    }}>
+    <div style={container}>
       <h1 style={{ color: "#333" }}>Welcome to Blog Platform 🚀</h1>
 
       <div style={{ marginTop: "20px" }}>
-        <a href="/login">
+        <Link href="/login">
           <button style={btnStyle}>Login</button>
-        </a>
+        </Link>
 
-        <a href="/signup">
+        <Link href="/signup">
           <button style={btnStyle}>Signup</button>
-        </a>
+        </Link>
       </div>
     </div>
   );
 }
+
+const container = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "100vh",
+  flexDirection: "column",
+  backgroundColor: "#f0f4f8"
+};
 
 const btnStyle = {
   padding: "10px 20px",
