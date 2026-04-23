@@ -24,13 +24,63 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
+  <div style={container}>
+    <div style={formBox}>
+      <h1 style={{ marginBottom: "20px" }}>Login</h1>
 
-      <input onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-      <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+      <input
+        style={input}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Email"
+      />
 
-      <button onClick={handleLogin}>Login</button>
+      <input
+        style={input}
+        type="password"
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
+      />
+
+      <button style={btn} onClick={handleLogin}>
+        Login
+      </button>
     </div>
-  );
+  </div>
+); 
+const container = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  minHeight: "100vh",
+  backgroundColor: "#0f172a" // dark background
+};
+
+const formBox = {
+  backgroundColor: "#1e293b",
+  padding: "30px",
+  borderRadius: "10px",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  boxShadow: "0 0 15px rgba(0,0,0,0.3)"
+};
+
+const input = {
+  padding: "10px",
+  margin: "10px",
+  width: "250px",
+  borderRadius: "5px",
+  border: "1px solid #ccc"
+};
+
+const btn = {
+  padding: "10px 20px",
+  marginTop: "10px",
+  backgroundColor: "#22c55e", // ✅ green button
+  color: "white",
+  border: "none",
+  borderRadius: "5px",
+  cursor: "pointer"
+};
+
 }

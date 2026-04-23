@@ -23,9 +23,10 @@ export default function Signup() {
     }
   };
 
-  return (
-    <div style={container}>
-      <h1>Signup</h1>
+ return (
+  <div style={container}>
+    <div style={formBox}>
+      <h1 style={{ marginBottom: "20px" }}>Signup</h1>
 
       <input
         style={input}
@@ -44,17 +45,26 @@ export default function Signup() {
         Signup
       </button>
     </div>
-  );
+  </div>
+);
 }
 
-// ✅ OUTSIDE component
 const container = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  minHeight: "100vh",
+  backgroundColor: "#0f172a" // dark background
+};
+
+const formBox = {
+  backgroundColor: "#1e293b",
+  padding: "30px",
+  borderRadius: "10px",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  justifyContent: "center",
-  minHeight: "100vh",
-  backgroundColor: "#f5f7fa"
+  boxShadow: "0 0 15px rgba(0,0,0,0.3)"
 };
 
 const input = {
@@ -68,8 +78,10 @@ const input = {
 const btn = {
   padding: "10px 20px",
   marginTop: "10px",
-  backgroundColor: "#007bff",
+  backgroundColor: "#3b82f6", // blue button
   color: "white",
   border: "none",
-  borderRadius: "5px"
+  borderRadius: "5px",
+  cursor: "pointer"
+
 };

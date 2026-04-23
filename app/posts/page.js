@@ -32,21 +32,23 @@ export default function Posts() {
   );
 }
 
-// ✅ styles
 const container = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  justifyContent: "center",
   minHeight: "100vh",
-  backgroundColor: "#f5f7fa"
+  backgroundColor: "#0f172a", // dark background
+  paddingTop: "20px"
 };
 
 const card = {
-  border: "1px solid #ddd",
-  padding: "10px",
+  backgroundColor: "#1e293b", // dark card
+  color: "white",
+  padding: "15px",
   margin: "10px",
-  width: "300px",
-  borderRadius: "5px",
-  backgroundColor: "white"
+  width: "320px",
+  borderRadius: "10px",
+  boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+  transition: "0.3s"
+
 };
