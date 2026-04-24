@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, CSSProperties } from "react";
 
 export default function RootLayout({
   children,
@@ -14,9 +14,10 @@ export default function RootLayout({
   );
 }
 
-const container = {
-  margin: 0,
+const container: CSSProperties = {
   minHeight: "100vh",
-  backgroundColor: "#0f172a",
-  color: "white",
+  margin: 0,
+  backgroundColor: "#000000",
+  display: "flex",
+  flexDirection: "column",
 };

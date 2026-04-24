@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
-import { useRouter } from "next/navigation"; // ✅ here
+import { useRouter } from "next/navigation";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const router = useRouter(); // ✅ inside function
+  const router = useRouter();
 
   const handleLogin = async () => {
     const { error } = await supabase.auth.signInWithPassword({
@@ -19,40 +19,44 @@ export default function Login() {
       alert(error.message);
     } else {
       alert("Login successful ✅");
-      router.push("/dashboard"); // redirect
+      router.push("/dashboard");
     }
   };
 
   return (
-  <div style={container}>
-    <div style={formBox}>
-      <h1 style={{ marginBottom: "20px" }}>Login</h1>
+    <div style={container}>
+      <div style={formBox}>
+        <h1>Login</h1>
 
-      <input
-        style={input}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-      />
+        <input
+          style={input}
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-      <input
-        style={input}
-        type="password"
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-      />
+        <input
+          style={input}
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-      <button style={btn} onClick={handleLogin}>
-        Login
-      </button>
+        <button style={btn} onClick={handleLogin}>
+          Login
+        </button>
+      </div>
     </div>
-  </div>
-); 
+  );
+}
+
+/* ✅ ADD THESE BELOW (THIS IS WHAT YOU MISSED) */
+
 const container = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   minHeight: "100vh",
-  backgroundColor: "#0f172a" // dark background
+  backgroundColor: "#0f172a",
 };
 
 const formBox = {
@@ -62,25 +66,17 @@ const formBox = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  boxShadow: "0 0 15px rgba(0,0,0,0.3)"
 };
 
 const input = {
   padding: "10px",
   margin: "10px",
   width: "250px",
-  borderRadius: "5px",
-  border: "1px solid #ccc"
 };
 
 const btn = {
-  padding: "10px 20px",
-  marginTop: "10px",
-  backgroundColor: "#22c55e", // ✅ green button
+  padding: "10px",
+  backgroundColor: "#22c55e",
   color: "white",
   border: "none",
-  borderRadius: "5px",
-  cursor: "pointer"
 };
-
-}

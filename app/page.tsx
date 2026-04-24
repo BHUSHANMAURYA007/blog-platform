@@ -1,4 +1,10 @@
-export default function RootLayout({ children }) {
+import { ReactNode, CSSProperties } from "react";
+
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <html lang="en" style={{ backgroundColor: "#000" }}>
       <body style={container}>
@@ -8,7 +14,7 @@ export default function RootLayout({ children }) {
   );
 }
 
-const container = {
+const container: CSSProperties = {
   minHeight: "100vh",
   margin: 0,
   backgroundColor: "#000000",
