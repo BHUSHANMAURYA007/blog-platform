@@ -14,5 +14,5 @@ const container = {
   alignItems: "center",
   justifyContent: "center",
   minHeight: "100vh",
-  backgroundColor: "#f5f7fa"
+  backgroundColor: "#0f172a"  // dark blue-black (more modern UI)
 };

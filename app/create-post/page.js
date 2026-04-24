@@ -7,6 +7,21 @@ export default function CreatePost() {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
 
+  // ✅ AI GENERATE FUNCTION
+  const generateAI = async () => {
+  const res = await fetch("/api/generate-post", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ content: title }),
+  });
+
+  const data = await res.json();
+  setBody(data.summary);
+};
+
+  // ✅ SAVE POST
   const handleCreate = async () => {
     const { error } = await supabase.from("posts").insert([
       { title, body },
@@ -16,6 +31,8 @@ export default function CreatePost() {
       alert(error.message);
     } else {
       alert("Post created ✅");
+      setTitle("");
+      setBody("");
     }
   };
 
@@ -24,16 +41,25 @@ export default function CreatePost() {
       <h1>Create Post</h1>
 
       <input
-        placeholder="Title"
+        placeholder="Title (topic for AI)"
+        value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
 
+      {/* ✅ AI BUTTON */}
+      <button onClick={generateAI}>
+        Generate with AI ✨
+      </button>
+
       <textarea
-        placeholder="Body"
+        placeholder="Body (AI will fill this)"
+        value={body}
         onChange={(e) => setBody(e.target.value)}
       />
 
-      <button onClick={handleCreate}>Create</button>
+      <button onClick={handleCreate}>
+        Create
+      </button>
     </div>
   );
 }
