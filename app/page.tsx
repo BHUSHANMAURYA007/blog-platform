@@ -1,16 +1,11 @@
 import { ReactNode, CSSProperties } from "react";
 
-export default function RootLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function Home() {
   return (
-    <html lang="en" style={{ backgroundColor: "#000" }}>
-      <body style={container}>
-        {children}
-      </body>
-    </html>
+    <div style={{ color: "white", textAlign: "center", marginTop: "100px" }}>
+      <h1>Welcome to Blog Platform 🚀</h1>
+      <p>Go to login or create post</p>
+    </div>
   );
 }
 
