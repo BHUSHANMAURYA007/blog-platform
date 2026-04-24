@@ -9,7 +9,7 @@ export default function CreatePost() {
 
   // ✅ AI GENERATE FUNCTION
   const generateAI = async () => {
-  const res = await fetch("/api/generate-post", {
+  const res = await fetch("/api/summarize", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -23,18 +23,24 @@ export default function CreatePost() {
 
   // ✅ SAVE POST
   const handleCreate = async () => {
-    const { error } = await supabase.from("posts").insert([
-      { title, body },
-    ]);
+  const { data: { session } } = await supabase.auth.getSession();
+  
+  const { error } = await supabase.from("posts").insert([
+    { 
+      title, 
+      body,
+      author_id: session.user.id  // add this!
+    },
+  ]);
 
-    if (error) {
-      alert(error.message);
-    } else {
-      alert("Post created ✅");
-      setTitle("");
-      setBody("");
-    }
-  };
+  if (error) {
+    alert(error.message);
+  } else {
+    alert("Post created ✅");
+    setTitle("");
+    setBody("");
+  }
+};
 
   return (
     <div>
