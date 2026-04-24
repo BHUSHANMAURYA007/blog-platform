@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import React from "react";git add .
+git commit -m "fix layout error"
+git push
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
