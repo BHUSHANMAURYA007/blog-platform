@@ -9,7 +9,7 @@ export default function CreatePost() {
 
   // ✅ AI GENERATE FUNCTION
   const generateAI = async () => {
-  const res = await fetch("/api/summarize", {
+ const res = await fetch("/api/summarize", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
