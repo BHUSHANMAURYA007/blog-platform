@@ -1,6 +1,6 @@
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ backgroundColor: "#000" }}>
       <body style={container}>
         {children}
       </body>
@@ -9,10 +9,8 @@ export default function RootLayout({ children }) {
 }
 
 const container = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
+  margin: 0,
   minHeight: "100vh",
-  backgroundColor: "#0f172a"  // dark blue-black (more modern UI)
+  backgroundColor: "#0f172a",
+  color: "white",
 };
