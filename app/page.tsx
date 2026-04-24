@@ -24,6 +24,7 @@ export default function Home() {
           Login
         </button>
         <button
+      
           onClick={() => router.push("/signup")}
           style={{ padding: "0.8rem 2rem", backgroundColor: "purple", color: "white", border: "none", borderRadius: "8px", cursor: "pointer", fontSize: "1rem" }}
         >
